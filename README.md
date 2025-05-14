@@ -34,7 +34,7 @@ However, if you prefer to manage `chromedriver` yourself:
 
 - `Bundestag.py`: Scrapes **all Bundestag members** (around 630 politicians).
 - `Bundestag_Limited.py`: Scrapes a **limited number of members** (e.g. 5 or 100), based on the `MAX_MEMBERS` variable.
-- `bundestag_profiles_all_complete.csv`: Output CSV with all scraped data (name, party, profile info, social media).
+- `bundestag2025.csv`: Output CSV with all scraped data (name, party, profile info, social media).
 
 ---
 
