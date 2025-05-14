@@ -43,5 +43,5 @@ However, if you prefer to manage `chromedriver` yourself:
 Install the required packages with:
 
 ```bash
-pip install selenium beautifulsoup4 pandas webdriver-manager
+pip install pandas bs4 selenium webdriver-manager lxml
 
