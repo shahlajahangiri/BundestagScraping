@@ -8,9 +8,6 @@ Topic: Scraping the Bundestag website in order to get elected members informatio
 All data is publicly available and scraped from the official Bundestag website:
 https://www.bundestag.de/abgeordnete
 
-## License
-
-This project is licensed under the MIT License © 2025 Shahla Jahangiri.
 
 # 🏛️ Bundestag Scraper
 
