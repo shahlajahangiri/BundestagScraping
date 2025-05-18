@@ -1,3 +1,5 @@
+#Only Scrapping limited members so you can adjust the number as you wish
+
 import time
 import re
 import pandas as pd
@@ -8,6 +10,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+
+# Here you can set how many members to scrape
+MAX_MEMBERS = 10  # Change this number to any number you'd like
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
@@ -25,7 +30,7 @@ try:
     list_btn.click()
     time.sleep(3)
 except:
-    print("Already in list view or button not clickable.")
+    print(" Already in list view or button not clickable.")
 
 last_height = driver.execute_script("return document.body.scrollHeight")
 while True:
@@ -35,7 +40,7 @@ while True:
     if new_height == last_height:
         break
     last_height = new_height
-print("Finished scrolling, all members loaded.")
+print("Finished scrolling, members loaded.")
 
 wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div.bt-teaser-person")))
 
@@ -43,13 +48,13 @@ all_data = []
 social_media_labels = set()
 idx = 0
 
-while True:
+while idx < MAX_MEMBERS:
     tiles = driver.find_elements(By.CSS_SELECTOR, "div.bt-teaser-person")
     if idx >= len(tiles):
         break
 
     try:
-        print(f" Visiting {idx+1}/{len(tiles)}")
+        print(f"Visiting {idx+1}/{MAX_MEMBERS}")
         tile = tiles[idx]
         driver.execute_script("arguments[0].scrollIntoView(true);", tile)
         time.sleep(1)
@@ -160,7 +165,7 @@ while True:
         idx += 1
 
     except Exception as e:
-        print(f" Error on member {idx+1}: {e}")
+        print(f"Error on member {idx+1}: {e}")
         idx += 1
         continue
 
@@ -174,5 +179,5 @@ for label in sorted(social_media_labels):
     if label not in df.columns:
         df[label] = ""
 
-df.to_csv("bundestag_profiles_all_complete.csv", index=False, encoding="utf-8-sig")
-print("Finished, All members scraped with reliable names + social links + constituency info!")
+df.to_csv("bundestag_profiles_sampled.csv", index=False, encoding="utf-8-sig")
+print("Done! Sample of members saved.")
