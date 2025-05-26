@@ -35,10 +35,34 @@ However, if you prefer to manage `chromedriver` yourself:
 
 ---
 
-## 📝 Requirements
+## 📝 Requirements & Environment Setup
 
-Install the required packages with:
+To keep dependencies clean and isolated, this project uses a Python virtual environment (`.venv`).
+
+Follow these steps to create and activate your virtual environment:
+
+1. Create the virtual environment:
+```bash
+python3 -m venv .venv
+```
+2. Activate the virtual environment:
+
+    macOS/Linux: 
+    ```bash
+    source .venv/bin/activate
+   ```
+    
+    Windows:
+    ```bash
+    .venv\Scripts\activate
+   ```
+    
+### ✅ Install Required Packages
+
+Once the virtual environment is activated, install all required Python packages with:
 
 ```bash
 pip install pandas bs4 selenium webdriver-manager lxml
+
+
 
