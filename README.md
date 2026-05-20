@@ -3,20 +3,20 @@ Project: Political Deception
 Topic: Scraping the Bundestag website in order to get elected members information and social media accounts.
 
 
-🔗 Data Source
+Data Source
 
 All data is publicly available and scraped from the official Bundestag website:
 https://www.bundestag.de/abgeordnete
 
 
-# 🏛️ Bundestag Scraper
+# Bundestag Scraper
 
 This project scrapes profile data for all current Bundestag members from the official website: [https://www.bundestag.de/abgeordnete](https://www.bundestag.de/abgeordnete).  
 It captures names, party affiliation, biography details, committee memberships, and social media links.
 
 ---
 
-## ⚙️ Chromedriver Setup
+## Chromedriver Setup
 
 The code uses `webdriver-manager` to automatically handle the correct `chromedriver` version, so **manual download is not required**.
 
@@ -27,7 +27,7 @@ However, if you prefer to manage `chromedriver` yourself:
 
 ---
 
-## 📂 Files Overview
+## Files Overview
 
 - `Bundestag.py`: Scrapes **all Bundestag members** (around 630 politicians).
 - `Bundestag_Limited.py`: Scrapes a **limited number of members** (e.g. 5 or 100), based on the `MAX_MEMBERS` variable.
@@ -35,7 +35,7 @@ However, if you prefer to manage `chromedriver` yourself:
 
 ---
 
-## 📝 Requirements & Environment Setup
+## Requirements & Environment Setup
 
 To keep dependencies clean and isolated, this project uses a Python virtual environment (`.venv`).
 
@@ -57,7 +57,7 @@ python3 -m venv .venv
     .venv\Scripts\activate
    ```
     
-### ✅ Install Required Packages
+### Install Required Packages
 
 Once the virtual environment is activated, install all required Python packages with:
 
